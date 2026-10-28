@@ -3,3 +3,41 @@
 @media(min-width:1000px){.package-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.hero{min-height:450px}}
 @media(max-width:700px){.topbar{height:64px}.menu-btn{display:block}.topbar nav{display:none;position:absolute;top:63px;left:0;right:0;padding:16px;background:#0b0e15;border-bottom:1px solid var(--line);flex-direction:column;gap:14px}.topbar nav.open{display:flex}.hero{grid-template-columns:1fr;padding-top:42px;padding-bottom:25px;min-height:unset}.hero-art{min-height:160px;grid-row:1}.orb{width:145px;height:145px;font-size:78px}.diamond-stack{font-size:25px;right:8%;bottom:0}.flare{font-size:44px;top:0}.hero h1{font-size:38px}.section{padding-top:38px;padding-bottom:38px}.section-heading{display:block}.section-heading>p{margin-bottom:0}.package-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.package-card{padding:14px 10px}.package-icon{font-size:34px}.package-card h3{font-size:13px}.price{font-size:18px}.order-layout{grid-template-columns:1fr}.step-grid{grid-template-columns:1fr}.trust{gap:10px}.trust span{font-size:10px}footer{align-items:flex-start;flex-direction:column;gap:12px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+/* BD Diamond Store - Black & Gold */
+body {
+  background: #080808;
+  color: #f5f5f5;
+}
+
+#diamond-packages {
+  padding: 24px 16px;
+  background: linear-gradient(135deg, #080808, #17130a);
+  border: 1px solid #59451a;
+  border-radius: 18px;
+  margin: 16px;
+}
+
+#diamond-packages h2 {
+  color: #ffd447;
+  font-weight: 800;
+  margin: 22px 0 14px;
+}
+
+#diamond-packages .package {
+  background: linear-gradient(145deg, #191919, #080808);
+  border: 1px solid #d6a900;
+  border-radius: 14px;
+  padding: 18px;
+  margin: 12px 0;
+  text-align: center;
+  box-shadow: 0 0 12px #d6a90022;
+}
+
+#diamond-packages .package h3 {
+  color: #ffffff;
+}
+
+#diamond-packages .package p {
+  color: #ffd447;
+  font-weight: bold;
+}
