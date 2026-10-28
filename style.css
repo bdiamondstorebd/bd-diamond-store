@@ -168,3 +168,17 @@ footer {
     padding: 22px;
   }
 }
+
+.character-image {
+  display: block;
+  width: 100%;
+  height: 145px;
+  object-fit: contain;
+  margin: 0 auto 12px;
+  border-radius: 10px;
+  background: radial-gradient(circle, #30260c, #101010);
+}
+
+.package-card {
+  overflow: hidden;
+}
