@@ -1,18 +1,17 @@
 
 const packages = [
-  { name: "25 Diamonds", price: 25, icon: "💎" },
-  { name: "50 Diamonds", price: 40, icon: "💎" },
-  { name: "115 Diamonds", price: 89, icon: "💎" },
-  { name: "240 Diamonds", price: 169, icon: "💎" },
-  { name: "355 Diamonds", price: 249, icon: "💎" },
-  { name: "505 Diamonds", price: 355, icon: "💎" },
-  { name: "Weekly Lite", price: 45, icon: "🎁" },
-  { name: "Weekly Membership", price: 159, icon: "👑" },
-  { name: "Monthly Membership", price: 799, icon: "🏆" }
+  { name: "25 Diamonds", price: 25 },
+  { name: "50 Diamonds", price: 40 },
+  { name: "115 Diamonds", price: 89 },
+  { name: "240 Diamonds", price: 169 },
+  { name: "355 Diamonds", price: 249 },
+  { name: "505 Diamonds", price: 355 },
+  { name: "Weekly Lite", price: 45 },
+  { name: "Weekly Membership", price: 159 },
+  { name: "Monthly Membership", price: 799 }
 ];
 
 const $ = id => document.getElementById(id);
-
 const grid = $("packageGrid");
 const select = $("packageSelect");
 const form = $("orderForm");
@@ -30,9 +29,16 @@ function loadPackages() {
     const card = document.createElement("article");
     card.className = "package-card";
 
-    const picture = document.createElement("div");
-    picture.className = "package-picture";
-    picture.textContent = item.icon;
+    const picture = document.createElement("img");
+    picture.className = "character-image";
+    picture.src = "character.jpg";
+    picture.alt = "Free Fire Character";
+    picture.loading = "lazy";
+
+    picture.onerror = () => {
+      picture.alt = "Character image unavailable";
+      picture.style.display = "none";
+    };
 
     const title = document.createElement("h3");
     title.textContent = item.name;
@@ -67,7 +73,7 @@ form.addEventListener("submit", event => {
   const item = packages[index];
 
   if (!/^[0-9]{6,15}$/.test(playerId)) {
-    alert("Player ID অবশ্যই ৬–১৫টি সংখ্যার হতে হবে।");
+    alert("Player ID ৬–১৫টি সংখ্যার হতে হবে।");
     return;
   }
 
@@ -77,7 +83,6 @@ form.addEventListener("submit", event => {
   }
 
   const orderId = "BD" + Date.now().toString().slice(-8);
-
   const order = {
     playerId,
     package: item.name,
@@ -91,7 +96,6 @@ form.addEventListener("submit", event => {
     const orders = JSON.parse(
       localStorage.getItem("bdDemoOrders") || "{}"
     );
-
     orders[orderId] = order;
     localStorage.setItem("bdDemoOrders", JSON.stringify(orders));
   } catch {
@@ -106,7 +110,7 @@ form.addEventListener("submit", event => {
     `Player ID: ${playerId}\n` +
     `Package: ${item.name}\n` +
     `Demo Price: ৳${item.price}\n\n` +
-    "এটি শুধু ডেমো। কোনো টাকা দিও না; ডায়মন্ড পাঠানো হবে না।"
+    "এটি শুধু ডেমো। বাস্তব পেমেন্ট বা ডায়মন্ড ডেলিভারি চালু নেই।"
   );
 
   form.reset();
