@@ -1,119 +1,92 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080a0f">
-  <title>BD Diamond Store | Free Fire Top-Up</title>
-  <meta name="description" content="BD Diamond Store - Free Fire top-up demo website for Bangladesh.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BD Diamond Store</title>
+  <meta name="description" content="BD Diamond Store - Free Fire diamond package demo">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="topbar">
-  <a class="brand" href="#home" aria-label="BD Diamond Store home"><span class="gem">◇</span><span><b>BD Diamond Store</b><small>FREE FIRE TOP-UP · BD</small></span></a>
-  <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
-  <nav id="nav"><a href="#home">Home</a><a href="#packages">Diamond Packages</a><a href="#topup">Top Up</a><a href="#status">Order Status</a></nav>
-</header>
 
-<main>
-<section class="hero" id="home">
-  <div class="hero-copy">
-    <p class="eyebrow">FREE FIRE · BANGLADESH</p>
-    <h1>BD DIAMOND <span>STORE</span></h1>
-    <p class="hero-sub">তোমার পছন্দের ডায়মন্ড প্যাকেজ বেছে নাও।</p>
-    <p class="notice">DEMO WEBSITE — এখনো কোনো আসল পেমেন্ট বা ডায়মন্ড ডেলিভারি চালু নেই।</p>
-    <a class="btn" href="#packages">প্যাকেজ দেখুন <span>→</span></a>
-    <div class="trust"><span>⚡ সহজ অর্ডার</span><span>🔒 নিরাপদ ডিজাইন</span><span>📱 মোবাইল-ফ্রেন্ডলি</span></div>
-  </div>
-  <div class="hero-art" aria-hidden="true"><div class="orb">💎</div><div class="diamond-stack">💎 💎<br>💎 💎 💎</div><div class="flare">✦</div></div>
-</section>
+  <header class="header">
+    <h1>💎 BD Diamond Store</h1>
+    <p>তোমার পছন্দের প্যাকেজ বেছে নাও</p>
+  </header>
 
-<section class="section" id="packages">
-  <div class="section-heading"><div><p class="eyebrow">CHOOSE YOUR PACK</p><h2>💎 Diamond Packages</h2></div><p>ডেমো মূল্য — প্রকাশের আগে নিজের সরবরাহকারীর দাম বসাও।</p></div>
-  <div class="package-grid" id="packageGrid"></div>
-</section>
+  <main class="container">
+    <section id="packages">
+      <h2>💎 Diamond Packages</h2>
+      <p class="notice">⚠️ Demo Website — বাস্তব টপ-আপ বা পেমেন্ট চালু নেই।</p>
+      <div id="packageGrid" class="package-grid"></div>
+    </section>
 
-<section class="section order-layout" id="topup">
-  <div class="panel">
-    <p class="eyebrow">PLACE AN ORDER</p><h2>Top Up Order</h2>
-    <p class="muted">Player ID সঠিকভাবে লিখে প্যাকেজ নির্বাচন করো।</p>
-    <form id="orderForm">
-      <label for="playerId">Free Fire Player ID</label>
-      <input id="playerId" name="playerId" inputmode="numeric" pattern="[0-9]{6,15}" minlength="6" maxlength="15" placeholder="যেমন: 123456789" required>
-      <label for="server">Server</label>
-      <select id="server" name="server"><option value="Bangladesh (BD)">Bangladesh (BD)</option><option value="Other / Verify First">Other / Verify First</option></select>
-      <label for="packageSelect">Diamond Package</label>
-      <select id="packageSelect" name="packageSelect" required></select>
-      <label for="payment">Payment Method (Demo only)</label>
-      <select id="payment" name="payment"><option value="bKash">bKash</option><option value="Nagad">Nagad</option></select>
-      <button class="btn full" type="submit">ডেমো অর্ডার তৈরি করুন →</button>
-    </form>
-    <div class="alert"><b>⚠ ডেমো মোড</b><br>এই ফর্ম কোনো টাকা নেয় না এবং কোনো ডায়মন্ড পাঠায় না।</div>
-  </div>
-  <div class="panel status-panel" id="status">
-    <p class="eyebrow">TRACK YOUR ORDER</p><h2>Order Status</h2>
-    <p class="muted">এই ব্রাউজারে তৈরি করা ডেমো অর্ডারের ID দিয়ে খোঁজ করো।</p>
-    <form id="statusForm">
-      <label for="orderId">Order ID</label>
-      <input id="orderId" placeholder="যেমন: BD123456" autocomplete="off" required>
-      <button class="btn full secondary" type="submit">স্ট্যাটাস দেখুন</button>
-    </form>
-    <div id="statusResult" class="status-result" aria-live="polite"><span class="status-icon">ⓘ</span><p>এখনো কোনো অর্ডার খোঁজা হয়নি।</p></div>
-    <p class="fineprint">ডেমো স্ট্যাটাস শুধু এই ডিভাইস/ব্রাউজারে সংরক্ষিত থাকে। এটি বাস্তব সার্ভার স্ট্যাটাস নয়।</p>
-  </div>
-</section>
+    <section id="topup" class="panel">
+      <h2>🛒 ডেমো অর্ডার</h2>
 
-<section class="section steps">
-  <p class="eyebrow">HOW IT WILL WORK</p><h2>বাস্তব সেবা চালু করতে যা লাগবে</h2>
-  <div class="step-grid">
-    <article><span>01</span><h3>Payment Gateway</h3><p>bKash/Nagad-এর অনুমোদিত ব্যবসায়িক পেমেন্ট ও সার্ভার-সাইড ভেরিফিকেশন।</p></article>
-    <article><span>02</span><h3>Secure Backend</h3><p>অর্ডার, পেমেন্ট ও API key নিরাপদ সার্ভারে রাখতে হবে; শুধু GitHub Pages যথেষ্ট নয়।</p></article>
-    <article><span>03</span><h3>Top-Up Provider API</h3><p>বাংলাদেশ সার্ভার সমর্থন করে এমন বৈধ ও বিশ্বস্ত সরবরাহকারীর API দরকার।</p></article>
-  </div>
-</section>
-</main>
-<footer><a class="brand" href="#home"><span class="gem">◇</span><span><b>BD Diamond Store</b><small>DEMO PROTOTYPE</small></span></a><p>© <span id="year"></span> BD Diamond Store · এটি একটি ডেমো প্রোটোটাইপ।</p><a href="#home">উপরে যান ↑</a></footer>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="script.js"></script>
-</body><section id="diamond-packages">
-  <h2>💎 Diamond Packages</h2>
-  <p>Demo prices only — top-up delivery is not connected.</p>
+      <form id="orderForm">
+        <label for="playerId">Free Fire Player ID</label>
+        <input
+          id="playerId"
+          name="playerId"
+          type="text"
+          inputmode="numeric"
+          pattern="[0-9]{6,15}"
+          minlength="6"
+          maxlength="15"
+          placeholder="তোমার Player ID লেখো"
+          required
+        >
 
-  <div class="package">
-    <h3>25 Diamonds</h3>
-    <p>৳25 — Demo price</p>
-  </div>
+        <label for="server">Server</label>
+        <select id="server" name="server" required>
+          <option value="Bangladesh">Bangladesh</option>
+          <option value="Other">Other</option>
+        </select>
 
-  <div class="package">
-    <h3>50 Diamonds</h3>
-    <p>৳40 — Demo price</p>
-  </div>
+        <label for="packageSelect">Diamond Package নির্বাচন করো</label>
+        <select id="packageSelect" name="packageSelect" required>
+          <option value="">প্যাকেজ লোড হচ্ছে...</option>
+        </select>
 
-  <div class="package">
-    <h3>115 Diamonds</h3>
-    <p>৳89 — Demo price</p>
-  </div>
+        <label for="payment">Payment Method (Demo)</label>
+        <select id="payment" name="payment" required>
+          <option value="bKash">bKash (Demo)</option>
+          <option value="Nagad">Nagad (Demo)</option>
+        </select>
 
-  <div class="package">
-    <h3>240 Diamonds</h3>
-    <p>৳169 — Demo price</p>
-  </div>
+        <button type="submit" class="btn">ডেমো অর্ডার তৈরি করো</button>
+      </form>
 
-  <h2>🔥 Weekly & Monthly</h2>
+      <p id="toast" role="status"></p>
+    </section>
 
-  <div class="package">
-    <h3>Weekly Lite</h3>
-    <p>৳45 — Demo price</p>
-  </div>
+    <section class="panel">
+      <h2>📦 ডেমো অর্ডার স্ট্যাটাস</h2>
 
-  <div class="package">
-    <h3>Weekly Membership</h3>
-    <p>৳159 — Demo price</p>
-  </div>
+      <form id="statusForm">
+        <label for="orderId">Order ID</label>
+        <input
+          id="orderId"
+          name="orderId"
+          type="text"
+          placeholder="যেমন: BD12345678"
+          required
+        >
+        <button type="submit" class="btn">স্ট্যাটাস দেখো</button>
+      </form>
 
-  <div class="package">
-    <h3>Monthly Membership</h3>
-    <p>৳799 — Demo price</p>
-  </div>
-</section>
+      <p id="statusResult" role="status"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> BD Diamond Store</p>
+    <p>Demo only — কোনো বাস্তব পেমেন্ট বা ডায়মন্ড ডেলিভারি নেই।</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
+
