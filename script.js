@@ -1,3 +1,4 @@
+
 const packages = [
   { name: "25 Diamonds", price: 25, type: "diamond" },
   { name: "50 Diamonds", price: 40, type: "diamond" },
@@ -10,3 +11,28 @@ const packages = [
 ];
 
 console.log("BD Diamond Store demo packages loaded", packages);
+
+const packageGrid = document.getElementById("packageGrid");
+
+if (packageGrid) {
+  packageGrid.innerHTML = "";
+
+  packages.forEach((item) => {
+    const card = document.createElement("div");
+    card.className = "package-card";
+
+    const name = document.createElement("h3");
+    name.textContent = item.name;
+
+    const price = document.createElement("p");
+    price.textContent = "৳" + item.price;
+
+    const label = document.createElement("p");
+    label.textContent = "ডেমো মূল্য";
+
+    card.appendChild(name);
+    card.appendChild(price);
+    card.appendChild(label);
+    packageGrid.appendChild(card);
+  });
+}
