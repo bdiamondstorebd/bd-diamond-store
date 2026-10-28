@@ -41,3 +41,134 @@ body {
   color: #ffd447;
   font-weight: bold;
 }
+
+/* BD Diamond Store - Black & Gold Design */
+
+body {
+  margin: 0;
+  background: #080808;
+  color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  text-align: center;
+  padding: 28px 16px;
+  background: linear-gradient(135deg, #17130a, #050505);
+  border-bottom: 2px solid #d6a900;
+}
+
+.header h1 {
+  color: #ffd447;
+  margin-bottom: 8px;
+}
+
+.container {
+  width: min(100% - 28px, 1000px);
+  margin: 24px auto;
+}
+
+section {
+  margin-bottom: 28px;
+}
+
+h2 {
+  color: #ffd447;
+}
+
+.notice {
+  color: #ffdf80;
+  background: #191509;
+  border: 1px solid #66501a;
+  border-radius: 10px;
+  padding: 12px;
+  line-height: 1.6;
+}
+
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.package-card,
+.panel {
+  background: linear-gradient(145deg, #1c1c1c, #0b0b0b);
+  border: 1px solid #8f7018;
+  border-radius: 14px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.package-card {
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.package-card h3 {
+  color: #fff;
+  font-size: 16px;
+}
+
+.package-card p {
+  color: #ffd447;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin: 16px 0 7px;
+  color: #ffd447;
+}
+
+input,
+select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border-radius: 9px;
+  border: 1px solid #8f7018;
+  background: #111;
+  color: white;
+  font-size: 15px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 13px;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #ffe477, #d6a900);
+  color: #111;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+#toast,
+#statusResult {
+  color: #ffe477;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 12px;
+  border-top: 1px solid #66501a;
+  color: #c8c8c8;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (min-width: 650px) {
+  .package-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
